@@ -8,7 +8,7 @@ mod part_two;
 
 fn read_input() -> (Vec<i32>, Vec<i32>) {
     let input = File::open("./inputs/day_one.txt")
-        .expect("day one input file should be in input directory");
+        .expect("day one input file should be in the inputs directory");
     let mut input_buf_read = BufReader::new(input);
     let mut line = String::new();
     let mut left_list = Vec::new();
@@ -19,7 +19,7 @@ fn read_input() -> (Vec<i32>, Vec<i32>) {
             break;
         }
 
-        let mut two_halves = line.split("   ");
+        let mut two_halves = line.split_ascii_whitespace();
         let left_half = two_halves
             .next()
             .expect("left half should have had a value")
